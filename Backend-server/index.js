@@ -10,13 +10,7 @@ const PORT = process.env.PORT;
 // Your OpenWeatherMap API Key
 const API_KEY = process.env.API_KEY;
 
-app.use(cors(
-  {
-    origin: {"https://weather-climate-xi.vercel.app"},
-    methods:["GET"],
-    credentials: true
-  }
-  ));
+app.use(cors());
 
 app.get("/api/:path", async (req, res) => {
   const { path } = req.params;
