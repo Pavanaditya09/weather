@@ -13,7 +13,7 @@ const API_KEY = process.env.API_KEY;
 app.use(cors(
   {
     origin: {"https://weather-climate-xi.vercel.app"},
-    methods:{"GET"},
+    methods:["GET"],
     credentials: true
   }
   ));
