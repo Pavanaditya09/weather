@@ -1,8 +1,10 @@
 import axios from "axios";
 import { DateTime } from "luxon";
 
+axios.default.withCredentials= true;
+
 const getweather = async (infotype, params) => {
-  const response = await axios.get(`http://localhost:5000/api/${infotype}`, {
+  const response = await axios.get(`https://weather-ashy-rho.vercel.app/api/${infotype}`, {
     params, // Passing query parameters like city, lat, lon
   });
   return response.data;
