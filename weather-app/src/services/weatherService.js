@@ -115,16 +115,8 @@ const formatForecastWeather = (secs, offset, data) => {
     }))
     .slice(0, 5);
 
-  const daily = data
-    .filter((f) => f.dt_txt.slice(-8) === "09:00:00")
-    .map((f) => ({
-      temp: f.main.temp,
-      title: formatToLocalTime(f.dt, offset, "ccc"),
-      icon: iconUrl(f.weather[0].icon),
-      date: f.dt_txt,
-    }));
 
-  return { hourly, daily, forecastForEachday };
+  return { hourly, forecastForEachday };
 };
 
 const getStructuredweatherData = async (searchparams) => {
