@@ -10,25 +10,6 @@ const Inputs = ({ setQuery, setUnits }) => {
     setCity("");
   };
 
-  const getCurrenLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setQuery({ lat: latitude, lon: longitude });
-          console.log(latitude,longitude)
-        },
-        (error) => {
-          console.error("Error getting location: ", error);
-        }
-      );
-    }
-  };
-
-  useEffect(() => {
-    getCurrenLocation(); 
-  }, []);
-
   return (
     <div className="flex flex-row justify-center my-3  w-full ">
       <div className="flex flex-row  w-4/5 md:w-2/4  items-center justify-center space-x-4">
