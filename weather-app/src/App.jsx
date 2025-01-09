@@ -26,9 +26,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (query.q) {
       getweatherdata();
-    }
   }, [query, units]);
 
   const formatBackground = () => {
