@@ -1,3 +1,14 @@
+import React, { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "./context/ThemeContext";
+import Header from "./components/header";
+import Inputs from "./components/inputs";
+import Timeloaction from "./components/timelocation";
+import Tempdetails from "./components/tempdetails";
+import getStructuredweatherData from "./services/weatherService";
+import Forecast from "./components/forecast";
+import ForecastDialy from "./components/forecastdaily";
+import ReactLoading from "react-loading";
+
 function App() {
   const { theme } = useContext(ThemeContext);
   const [query, setQuery] = useState({ q: "London" }); // Default to London
