@@ -25,6 +25,28 @@ function App() {
     }
   };
 
+  const getCurrenLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setQuery({ lat: latitude, lon: longitude });
+          console.log("User's Location: ", latitude, longitude);
+        },
+        (error) => {
+          console.error("Error getting location: ", error);
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+    }
+  };
+
+  useEffect(() => {
+    getCurrenLocation();
+  }, []);
+
+
   useEffect(() => {
       getweatherdata();
   }, [query, units]);
