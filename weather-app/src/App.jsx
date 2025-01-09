@@ -47,9 +47,12 @@ function App() {
   }, []);
 
 
-  useEffect(() => {
-      getweatherdata();
-  }, [query, units]);
+useEffect(() => {
+  if (query.q || (query.lat && query.lon)) {
+    getweatherdata();
+  }
+}, [query, units]);
+
 
   const formatBackground = () => {
     if (!weather || !weather.temp) return "from-cyan-600 to-blue-700";
