@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState} from "react";
 import { BiSearch, BiCurrentLocation } from "react-icons/bi";
 const Inputs = ({ setQuery, setUnits }) => {
   const [city, setCity] = useState("");
