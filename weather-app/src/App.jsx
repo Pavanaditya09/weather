@@ -11,7 +11,7 @@ import ReactLoading from "react-loading";
 
 function App() {
   const { theme } = useContext(ThemeContext);
-  const [query, setQuery] = useState({ q: "" }); // Default to London
+  const [query, setQuery] = useState({ q: "" }); 
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
